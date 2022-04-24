@@ -8,6 +8,7 @@ class Flat < ApplicationRecord
   validates :number_of_bathrooms, presence: true
   validates :address, presence: true
   validates :price_per_night, presence: true
+  validates :photos, presence: true
 
   after_validation :geocode, if: :will_save_change_to_address?
 

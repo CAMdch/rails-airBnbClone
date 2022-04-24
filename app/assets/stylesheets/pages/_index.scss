@@ -1,7 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "new_flat";
 
 .containerPerso {
   width: 80%;
   margin: 0 auto;
+}
+
+.containerForm {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 25px;
 }

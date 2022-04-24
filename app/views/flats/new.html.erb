@@ -1,4 +1,5 @@
-<div class="containerPerso">
+<div class="containerForm">
+  <h1>Add a flat </h1>
   <%= simple_form_for @flat do |f| %>
     <%= f.input :title%>
     <div class="number-form">
@@ -6,9 +7,11 @@
       <%= f.input :number_of_beds, class: "input" %>
       <%= f.input :number_of_bathrooms, class: "input" %>
     </div>
+    <%= f.input :price_per_night %>
     <%= f.input :address,
             input_html: { data: { geocoder_target: "address" }, class: "d-none"},
             wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-    <%= f.submit %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class: "btn btn-flat" %>
   <% end %>
 </div>
